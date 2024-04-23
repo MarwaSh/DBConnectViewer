@@ -1,0 +1,19 @@
+.connection-container {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+.table-header {
+    background-color: #e0e0f0;
+}

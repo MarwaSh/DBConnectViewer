@@ -1,0 +1,53 @@
+{
+  "connections": [
+    {
+      "id": "1",
+      "databaseName": "Primary Database",
+      "username": "admin",
+      "databaseType": "MySQL",
+      "url": "jdbc:mysql://localhost:3306/myDatabase"
+    },
+    {
+      "id": "2",
+      "databaseName": "Analytics DB",
+      "username": "analytics_user",
+      "databaseType": "PostgreSQL",
+      "url": "jdbc:postgresql://analytics.host:5432/analytics"
+    },
+    {
+      "id": "3",
+      "databaseName": "Warehouse DB",
+      "username": "warehouse_mgr",
+      "databaseType": "Oracle",
+      "url": "jdbc:oracle:thin:@warehouse.db:1521:whouse"
+    },
+    {
+      "id": "4",
+      "databaseName": "Research DB",
+      "username": "research_admin",
+      "databaseType": "SQLite",
+      "url": "file:///data/research.db"
+    },
+    {
+      "id": "5",
+      "databaseName": "Development DB",
+      "username": "dev_user",
+      "databaseType": "MongoDB",
+      "url": "mongodb://dev.db:27017/development"
+    },
+    {
+      "id": "ezqi242xl",
+      "databaseName": "aa",
+      "username": "aa",
+      "databaseType": "Snowflake",
+      "url": "jdc:snowflake://default"
+    },
+    {
+      "id": "02hh1axpx",
+      "databaseName": "bb",
+      "username": "aa",
+      "databaseType": "Trino",
+      "url": "jdc:trino://default"
+    }
+  ]
+}
