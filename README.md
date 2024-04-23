@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# DBConnectViewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+DBConnectViewer is an intuitive web application designed to manage and visualize database connections. It enables users to view a list of all database connections, add new ones, and access detailed information about each connection. This tool is especially useful for database administrators and developers aiming to streamline their database connectivity workflows.
 
-## Available Scripts
+## Features
+- **View Connections**: Display all available database connections in a tabular format.
+- **Add Connections**: Users can add new database connections by specifying details such as the database name, URL, username, and database type.
+- **Detailed View**: Click on any connection to view more detailed information about the connection.
 
-In the project directory, you can run:
+## Technologies Used
+- **React**: Utilized for building the interactive user interface.
+- **Material-UI**: Used for styling the components and enhancing the user interface.
+- **React Router**: Manages the navigation between different views of the application.
 
-### `npm start`
+## Setup Instructions
+To get a local copy up and running, follow these simple steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourgithubusername/DBConnectViewer.git
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Navigate to the project director**:
+``bash
+    cd DBConnectViewer
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Install dependencies**:
+``bash
+    npm install
 
-### `npm run build`
+4. **Run the application**:
+``bash
+    npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This will run the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+How to Use
+.Viewing Connections: Simply open the application to see the list of all configured database connections.
+.Adding a Connection: Click on the 'Add' button and fill in the necessary connection details in the provided form.
+.Accessing Connection Details: Click on any listed connection to view more detailed information.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
