@@ -3,29 +3,29 @@ import { useNavigate } from 'react-router-dom';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import AddConnectionDialog from './AddConnectionDialog';
-import { fetchConnections } from '../services/api';
+import { addConnectionToServer } from './../services/api';
 import Connection from '../models/connection';
 import './DatabaseConnectionList.css';
 
-const DatabaseConnectionList: React.FC = () => {
+interface ConnectionDetailsProps {
+    gotConnections: Connection[];
+}
+
+const DatabaseConnectionList: React.FC<ConnectionDetailsProps>= ({ gotConnections }) => {
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
-    const [connections, setConnections] = useState<Connection[]>([]);
+    const [connections, setConnections] = useState<Connection[]>(gotConnections);
 
+    // Effect for initializing or updating connections when gotConnections changes
     useEffect(() => {
-        const loadConnections = async () => {
-            try {
-                const fetchedConnections = await fetchConnections();
-                setConnections(fetchedConnections);
-            } catch (error) {
-                console.error('Failed to load connections:', error);
-            }
-        };
+        // This ensures we only reset the state if gotConnections actually changes
+        // and is different from the current state to prevent unnecessary overwrites
+        if (gotConnections !== connections) {
+            setConnections(gotConnections);
+        }
+    }, [gotConnections]);
 
-        loadConnections();
-    }, []);
-
-
+ 
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -34,35 +34,20 @@ const DatabaseConnectionList: React.FC = () => {
         setOpen(false);
     };
 
-    const handleAddConnection = (newConnection: Connection) => {
-        setConnections(prevConnections => [...prevConnections, newConnection]);
-    
-        addConnectionToServer(newConnection);
-        handleClose();
-    };
-    
-    // Function to send new connection to the server
-    const addConnectionToServer = async (connection: Connection) => {
+    const handleAddConnection = async (newConnection: Connection) => {
         try {
-            const response = await fetch('http://localhost:4000/connections', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(connection)
-            });
-            if (!response.ok) {
-                throw new Error('Failed to save the connection');
-            }
-            console.log('Connection added successfully');
+            const addedConnection = await addConnectionToServer(newConnection);
+            // If the server returns the successfully added connection, update the state
+            setConnections(prevConnections => [...prevConnections, newConnection]);
+            handleClose();
         } catch (error) {
-            console.error('Error adding connection:', error);
+            console.error('Error adding new connection:', error);
         }
     };
 
-    const handleRowClick = (id: string) => {
-        // Navigate to the detail page for the clicked connection
-        navigate(`/${id}`);
+    const handleRowClick = (connectionId: string) => {
+        const connection = connections.find(conn => conn.id === connectionId);
+        navigate(`/connection/${connectionId}`, { state: { connection } });
     };
 
     return (

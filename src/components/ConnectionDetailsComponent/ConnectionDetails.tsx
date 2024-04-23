@@ -1,37 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Connection from '../../models/connection'; 
-import { useParams } from 'react-router-dom';
-import { getConnectionDetails } from '../../services/api';
+import { useLocation, useParams } from 'react-router-dom';
 import ConnectionsTable from './ConnectionsTable';
 import { CircularProgress, Container, Typography, Box } from '@mui/material';
 import './ConnectionDetails.css';
 
-const ConnectionDetails: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
-    const [connection, setConnection] = useState<Connection | null>(null);
-    
+interface ConnectionDetailsProps {
+    connections: Connection[];
+}
 
-    useEffect(() => {
-        if (id) {
-            loadData();
-        }
-    }, [id]);
-  
-    async function loadData() {
-        try {
-            const data = await getConnectionDetails(id as string);
-            setConnection(data);
-        } catch (error) {
-            console.error('Failed to fetch details:', error);
-        }
-    }
+
+const ConnectionDetails: React.FC<ConnectionDetailsProps> = ({ connections }) => {
+    const { id } = useParams<{ id: string }>();
+    const location = useLocation();
+    const connection = location.state?.connection || connections.find(conn => conn.id === id);
+
 
     if (!connection) {
-        return (
-            <Container>
-                <CircularProgress />
-            </Container>
-        );
+        return <div>No connection found</div>;
     }
 
     return (

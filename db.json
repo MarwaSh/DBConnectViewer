@@ -48,6 +48,83 @@
       "username": "aa",
       "databaseType": "Trino",
       "url": "jdc:trino://default"
+    },
+    {
+      "id": "2oh2e6cys",
+      "databaseName": "new DB",
+      "username": "DB Manager",
+      "databaseType": "Trino",
+      "url": "jdc:trino://default"
+    },
+    {
+      "id": "7jw7y1xan",
+      "databaseName": "Marwa",
+      "username": "Marwa",
+      "databaseType": "Trino",
+      "url": "jdc:trino://default"
+    },
+    {
+      "id": "pn1dmrqyv",
+      "databaseName": "aa",
+      "username": "a",
+      "databaseType": "Trino",
+      "url": "jdc:trino://default"
+    },
+    {
+      "id": "yp4ceskhz",
+      "databaseName": "mmmaaaaaa54254",
+      "username": "h",
+      "databaseType": "Trino",
+      "url": "jdc:trino://default"
+    },
+    {
+      "id": "mo9fmqk4j",
+      "databaseName": "mm",
+      "username": "mm",
+      "databaseType": "Trino",
+      "url": "jdc:trino://default"
+    },
+    {
+      "id": "gijxfgg6d",
+      "databaseName": "Hi",
+      "username": "hi",
+      "databaseType": "Snowflake",
+      "url": "jdc:snowflake://default"
+    },
+    {
+      "id": "1fqexndvj",
+      "databaseName": "Hello",
+      "username": "Hello",
+      "databaseType": "Snowflake",
+      "url": "jdc:snowflake://default"
+    },
+    {
+      "id": "0zcyyq4ym",
+      "databaseName": "Hello",
+      "username": "Hello",
+      "databaseType": "Snowflake",
+      "url": "jdc:snowflake://default"
+    },
+    {
+      "id": "2ykcfwq05",
+      "databaseName": "dsd",
+      "username": "sd",
+      "databaseType": "Trino",
+      "url": "jdc:trino://default"
+    },
+    {
+      "id": "1ksa4snb3",
+      "databaseName": "here",
+      "username": "here",
+      "databaseType": "Snowflake",
+      "url": "jdc:snowflake://default"
+    },
+    {
+      "id": "yni74anlc",
+      "databaseName": "haha",
+      "username": "hahahah",
+      "databaseType": "MySQL",
+      "url": "jdc:mysql://default"
     }
   ]
 }
